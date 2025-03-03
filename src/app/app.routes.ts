@@ -9,8 +9,9 @@ import { authTokenGuard } from './core/guards/auth-token.guard';
 import { loginGuard } from './core/guards/login.guard';
 import { DeleteComponent } from './Views/products/delete/delete.component';
 import { UpdateComponent } from './Views/products/update/update.component';
-
-
+import { ChatComponent } from './Views/chat/chat.component';
+import { ClientesComponent } from './Views/clientes/clientes.component';
+import { FormClientesComponent } from './Views/form-clientes/form-clientes.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,21 @@ export const routes: Routes = [
     {
         path : 'welcome',
         component : WelcomeComponent,
+        canActivate : [loginGuard]
+    },
+    {
+        path : 'chat',
+        component : ChatComponent,
+        canActivate : [loginGuard]
+    },
+    {
+        path : 'clientes',
+        component : ClientesComponent,
+        canActivate : [loginGuard]
+    },
+    {
+        path : 'form-clientes',
+        component : FormClientesComponent,
         canActivate : [loginGuard]
     },
     {

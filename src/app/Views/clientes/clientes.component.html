@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h2 class="card-title mb-0">Clientes en Tiempo Real</h2>
+      </div>
+      <div class="card-body">
+        <div class="clientes-list mb-3" style="height: 300px; overflow-y: scroll;">
+          <div *ngFor="let cliente of clientes" class="cliente p-2 mb-2 bg-light border rounded">
+            <strong>Nombre:</strong> {{ cliente.nombre }}<br>
+            <strong>Email:</strong> {{ cliente.email }}<br>
+            <strong>Teléfono:</strong> {{ cliente.telefono }}<br>
+            <strong>Dirección:</strong> {{ cliente.direccion }}<br>
+            <strong>Fecha de Creación:</strong> {{ cliente.created_at | date:'yyyy-MM-dd HH:mm:ss' }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h2 class="card-title mb-0">Chat en Tiempo Real</h2>
+    </div>
+    <div class="card-body">
+      <div class="chat-messages mb-3" style="height: 300px; overflow-y: scroll;">
+        <div *ngFor="let msg of messages" class="message p-2 mb-2 bg-light border rounded">
+          <strong>{{ msg.username }}:</strong> {{ msg.message }}
+        </div>
+      </div>
+      <div class="chat-input">
+        <div class="input-group mb-3">
+          <input type="text" [(ngModel)]="message" class="form-control" placeholder="Escribe un mensaje" (keyup.enter)="sendMensaje()" />
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="sendMensaje()">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
